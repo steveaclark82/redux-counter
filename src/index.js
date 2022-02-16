@@ -1,26 +1,34 @@
-import React from 'react';
-import { render } from 'react-dom';
-import Counter from './Counter';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import React from "react";
+import { render } from "react-dom";
+import Counter from "./Counter";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 
 const initialState = {
-  count: 0
+  count: 0,
 };
 
 function reducer(state = initialState, action) {
   switch (action.type) {
-    case 'Increment':
+    case "Increment":
       return {
-        count: state.count + 1
+        count: state.count + 1,
       };
-    case 'Decrement':
+    case "IncrementByFive":
       return {
-        count: state.count - 1
+        count: state.count + 5,
       };
-    case 'Reset':
+    case "Decrement":
       return {
-        count: (state.count = 0)
+        count: state.count - 1,
+      };
+    case "DecrementByTen":
+      return {
+        count: state.count - 10,
+      };
+    case "Reset":
+      return {
+        count: (state.count = 0),
       };
     default:
       return state;
@@ -35,4 +43,4 @@ const App = () => (
   </Provider>
 );
 
-render(<App />, document.getElementById('root'));
+render(<App />, document.getElementById("root"));
