@@ -61,4 +61,3 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps)(Counter);
 
-export default connect(mapStateToProps)(Counter);
